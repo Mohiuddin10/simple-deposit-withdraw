@@ -1,13 +1,26 @@
-document.getElementById('btn-deposite').addEventListener('click', function(){
+
+
+document.getElementById('btn-deposit').addEventListener('click', function(){
     const depositInput = parseInt(document.getElementById('deposit-input').value);
-    let depositAmount = 0;
-    const depositBalance = parseInt(document.getElementById('deposit-amount'));
-    const balanceAmount = parseInt(document.getElementById('balance-amount'));
-
-    const newDeposit = depositBalance + depositInput;
-    console.log(newDeposit);
+    const depositBalance = parseInt(document.getElementById('deposit-amount').innerText);
+    const balanceAmount = parseInt(document.getElementById('balance-amount').innerText);
     
 
-    
+
+    // add deposit 
+    let newBalance = depositBalance + depositInput;
+    console.log(newBalance);
+    document.getElementById('deposit-amount').innerText = newBalance;
+    document.getElementById('balance-amount').innerText = newBalance;
      
+})
+
+document.getElementById('withdraw-btn').addEventListener('click', function(){
+    const withdrawField = parseInt(document.getElementById('withdraw-field').innerText);
+    const withdrawInput = parseInt(document.getElementById('withdraw-input').value);
+    const balanceAmount = parseInt(document.getElementById('balance-amount').innerText);
+    newBalance = balanceAmount - withdrawInput;
+    document.getElementById('balance-amount').innerText = newBalance;
+    let newWithdrawAmount = withdrawField + withdrawInput;
+    document.getElementById('withdraw-field').innerText = newWithdrawAmount;
 })
